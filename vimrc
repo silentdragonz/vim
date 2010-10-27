@@ -1,4 +1,6 @@
 set nocompatible
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 set background=dark
 set t_Co=256
 syntax on
@@ -83,4 +85,3 @@ set mouse=a
 if &term=="screen"
 	set ttymouse=xterm2
 endif
-call pathogen#runtime_append_all_bundles()
