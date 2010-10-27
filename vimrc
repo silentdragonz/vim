@@ -4,6 +4,7 @@ call pathogen#helptags()
 set background=dark
 set t_Co=256
 syntax on
+filetype off
 filetype plugin indent on
 "colorscheme slate2
 "source ~/.vim/plugin/guicolorscheme.vim
@@ -15,7 +16,7 @@ set wildmenu
 set number
 set smarttab
 set laststatus=2
-set statusline=%<%02n:\ %f\ %m%r\ %y%=%l %{fugitive#statusline()},%c%V\ of\ %L\ [%03.3b:0x%02.2B]\ %P
+set statusline=%<%02n:\ %f\ %m%r\ %{fugitive#statusline()}\ %y%=%l,%c%V\ of\ %L\ [%03.3b:0x%02.2B]\ %P
 set nowrap
 cwindow
 "set tags+=.tags;/
