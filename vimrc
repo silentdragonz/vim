@@ -15,7 +15,7 @@ set wildmenu
 set number
 set smarttab
 set laststatus=2
-set statusline=%<%02n:\ %f\ %m%r\ %y%=%l,%c%V\ of\ %L\ [%03.3b:0x%02.2B]\ %P
+set statusline=%<%02n:\ %f\ %m%r\ %y%=%l %{fugitive#statusline()},%c%V\ of\ %L\ [%03.3b:0x%02.2B]\ %P
 set nowrap
 cwindow
 "set tags+=.tags;/
