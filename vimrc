@@ -6,11 +6,7 @@ set t_Co=256
 syntax on
 filetype off
 filetype plugin indent on
-"colorscheme slate2
-"source ~/.vim/plugin/guicolorscheme.vim
-"call s:GuiColorScheme("sift")
 colo neverland
-"colo darkspectrum
 set wildmode=longest,list,full
 set wildmenu
 set number
