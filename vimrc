@@ -86,6 +86,13 @@ set mouse=a
 if &term=="screen"
 	set ttymouse=xterm2
 endif
+set relativenumber
+set undofile
+set ruler
 let mapleader=" "
+inoremap jj <ESC>
+map <leader>bd :bdelete<CR>
+map <leader>bn :bnext<CR>
+map <leader>bp :bprevious<CR>
 map <leader><leader> :noh<CR>
 map <leader>z ZZ
