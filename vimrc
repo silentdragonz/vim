@@ -88,3 +88,4 @@ if &term=="screen"
 endif
 let mapleader=" "
 map <leader><leader> :noh<CR>
+map <leader>z ZZ
