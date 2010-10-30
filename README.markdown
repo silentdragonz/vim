@@ -1,4 +1,3 @@
-sdfds
 VIM CONFIG
 ==========
 
