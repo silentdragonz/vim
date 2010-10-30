@@ -86,3 +86,5 @@ set mouse=a
 if &term=="screen"
 	set ttymouse=xterm2
 endif
+let mapleader=" "
+map <leader><leader> :noh<CR>
