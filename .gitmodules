@@ -4,9 +4,9 @@
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = http://github.com/scrooloose/nerdcommenter.git
-[submodule "bundle/rainbow-parenthesis"]
-	path = bundle/rainbow-parenthesis
-	url = git://github.com/vim-scripts/Rainbow-Parenthesis.git
 [submodule "bundle/fuzzyfinder"]
 	path = bundle/fuzzyfinder
 	url = git://github.com/vim-bundles/fuzzyfinder.git
+[submodule "bundle/gundo"]
+	path = bundle/gundo
+	url = http://github.com/sjl/gundo.vim.git

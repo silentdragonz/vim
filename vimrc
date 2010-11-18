@@ -95,3 +95,4 @@ map <leader>z ZZ
 map <leader>fo :FufFileWithCurrentBufferDir<CR>
 map <leader>o :FufFileWithCurrentBufferDir<CR>
 map <leader>bo :FufBuffer<CR>
+map <leader>u :GundoToggle<CR>
