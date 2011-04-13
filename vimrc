@@ -7,13 +7,17 @@ call pathogen#helptags()
 syntax on
 filetype plugin indent on
 
+set guifont=Consolas:h12
 set nocompatible
 set autochdir
 set encoding=utf-8
 set termencoding=utf-8
 set fileencoding=utf8
 set title
-set clipboard=unnamed,unnamedplus,autoselect
+"set clipboard=unnamed,unnamedplus,autoselect
+set matchpairs+=<:>
+set shortmess=atToOI
+set iskeyword+=_,$,@,%,#
 
 " {{{ Color Scheme
 set background=dark
@@ -85,7 +89,9 @@ endif
 set relativenumber
 set undofile
 set ruler
+set backspace=2
 let mapleader=" "
+" }}}
 
 " Statusline {{{
 	" Functions {{{
@@ -107,10 +113,10 @@ let mapleader=" "
 				" Prepare statusline arrows
 				" Syntax: [>] [>>] [<] [<<]
 				if s:round_stl
-					let new_stl = substitute(new_stl, '\[>\]',  'ǳ', 'g')
-					let new_stl = substitute(new_stl, '\[>>\]', 'ǵ', 'g')
-					let new_stl = substitute(new_stl, '\[<\]',  'ǲ', 'g')
-					let new_stl = substitute(new_stl, '\[<<\]', 'Ǵ', 'g')
+					let new_stl = substitute(new_stl, '\[>\]',  '►', 'g')
+					let new_stl = substitute(new_stl, '\[>>\]', '⌡', 'g')
+					let new_stl = substitute(new_stl, '\[<\]',  '◄', 'g')
+					let new_stl = substitute(new_stl, '\[<<\]', '⌠', 'g')
 				else
 					let new_stl = substitute(new_stl, '\[>\]',  'ǣ', 'g')
 					let new_stl = substitute(new_stl, '\[>>\]', 'ǥ', 'g')
@@ -163,7 +169,7 @@ let mapleader=" "
 	" Default statusline {{{
 		let g:default_stl  = ""
 		let g:default_stl .= "<CUR>#[Mode] %{&paste ? 'PASTE [>] ' : ''}%{substitute(mode(), '', '^V', 'g')} #[ModeS][>>]</CUR>"
-		let g:default_stl .= "#[Branch] %(%{substitute(fugitive#statusline(), 'GIT(\\([a-z0-9\\-_\\./:]\\+\\))', 'Đ \\1', 'gi')}#[BranchS] [>] %)" " Git branch
+		let g:default_stl .= "#[Branch] %(%{substitute(fugitive#statusline(), 'GIT(\\([a-z0-9\\-_\\./:]\\+\\))', '├┘ \\1', 'gi')}#[BranchS] [>] %)" " Git branch
 		let g:default_stl .= "#[ModFlag]%{&readonly ? 'Ĥ ' : ''}" " RO flag
 		let g:default_stl .= "#[FileName]%t " " File name
 		let g:default_stl .= "<CUR>#[Error]%(%{substitute(SyntasticStatuslineFlag(), '\\[Syntax: line:\\(\\d\\+\\) \\((\\(\\d\\+\\))\\)\\?\\]', '[>][>][>] SYNTAX đ \\1 \\2 [>][>][>]', 'i')} %)</CUR>" " Syntastic error flag
@@ -176,9 +182,9 @@ let mapleader=" "
 		let g:default_stl .= "%= " " Right align
 		let g:default_stl .= "<CUR>#[FileFormat]%{&fileformat} </CUR>" " File format
 		let g:default_stl .= "<CUR>#[FileEncoding]%{(&fenc == '' ? &enc : &fenc)} </CUR>" " File encoding
-		let g:default_stl .= "<CUR>#[Separator][<] Ġġ #[FileType]%{strlen(&ft) ? &ft : 'n/a'} </CUR>" " File type
+		let g:default_stl .= "<CUR>#[Separator][<] #[FileType]%{strlen(&ft) ? &ft : 'n/a'} </CUR>" " File type
 		let g:default_stl .= "#[LinePercentS][<<]#[LinePercent] %p%% " " Line/column/virtual column, Line percentage
-		let g:default_stl .= "#[LineNumberS][<<]#[LineNumber] đ %l#[LineColumn]:%c%V " " Line/column/virtual column, Line percentage
+		let g:default_stl .= "#[LineNumberS][<<]#[LineNumber] ʭ %l#[LineColumn]:%c%V " " Line/column/virtual column, Line percentage
 		let g:default_stl .= "%{exists('g:synid') && g:synid ? '[<] '.synIDattr(synID(line('.'), col('.'), 1), 'name').' ' : ''}" " Current syntax group
 	" }}}
 	" Color dict {{{
@@ -235,13 +241,18 @@ let mapleader=" "
         augroup StatusLineHighlight
                 autocmd!
 
-                let s:round_stl = 0
+                let s:round_stl = 1
 
                 au ColorScheme * call <SID>StatusLineColors(s:statuscolors)
                 au BufEnter,BufWinEnter,WinEnter,CmdwinEnter,CursorHold,BufWritePost,InsertLeave * call <SID>StatusLine((exists('b:stl') ? b:stl : g:default_stl), 'Normal', 1)
                 au BufLeave,BufWinLeave,WinLeave,CmdwinLeave * call <SID>StatusLine((exists('b:stl') ? b:stl : g:default_stl), 'Normal', 0)
                 au InsertEnter,CursorHoldI * call <SID>StatusLine((exists('b:stl') ? b:stl : g:default_stl), 'Insert', 1)
         augroup END
+" }}}
+" {{{ Custom Characters
+set fillchars=vert:│,fold:-,diff:Ď
+set listchars=tab:│\ ,trail:▫,eol:ⱶ
+"set listchars=tab:│\ ,trail:▫,eol:ⱶ
 " }}}
 " Folding {{{
 	set foldenable
@@ -318,14 +329,14 @@ let mapleader=" "
 						let l:clen = strlen(matchstr(l:cline, '^\W*'))
 
 						let l:indent = repeat(' ', indent(v:foldstart) - 2)
-						let l:text = 'ģ ' . l:text
+						let l:text = '▸ ' . l:text
 					endif
 				" }}}
 				" Prepare fold text {{{
-					let l:fnum = printf(' %s đ ', l:line_count)
+					let l:fnum = printf(' %s ʭ ', l:line_count)
 					let l:ftext = printf('%s%s ', l:indent, l:text)
 				" }}}
-				return l:ftext . repeat('Ķ', l:w_win - strchars(l:fnum) - strchars(l:ftext) - l:w_num - l:w_fold) . l:fnum
+				return l:ftext . repeat('―', l:w_win - strchars(l:fnum) - strchars(l:ftext) - l:w_num - l:w_fold) . l:fnum
 			" }}}
 		endfunction
 	" }}}
