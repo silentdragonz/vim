@@ -13,3 +13,6 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle/current-func-info"]
+	path = bundle/current-func-info
+	url = https://github.com/tyru/current-func-info.vim
