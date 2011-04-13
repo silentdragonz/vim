@@ -16,3 +16,15 @@
 [submodule "bundle/current-func-info"]
 	path = bundle/current-func-info
 	url = https://github.com/tyru/current-func-info.vim
+[submodule "bundle/php53syntax"]
+	path = bundle/php53syntax
+	url = https://github.com/vim-scripts/php.vim--Garvin.git
+[submodule "bundle/phpcomplete"]
+	path = bundle/phpcomplete
+	url = https://github.com/shawncplus/phpcomplete.vim.git
+[submodule "phpfolding"]
+	path = phpfolding
+	url = https://github.com/vim-scripts/phpfolding.vim.git
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = https://github.com/ervandew/supertab.git
