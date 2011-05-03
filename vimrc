@@ -14,7 +14,7 @@ set encoding=utf-8
 set termencoding=utf-8
 set fileencoding=utf8
 set title
-"set clipboard=unnamed,unnamedplus,autoselect
+set clipboard=unnamed,unnamedplus,autoselect
 set matchpairs+=<:>
 set shortmess=atToOI
 set iskeyword+=_,$,@,%,#
@@ -22,7 +22,7 @@ set iskeyword+=_,$,@,%,#
 " {{{ Color Scheme
 set background=dark
 set t_Co=256
-colo molokai 
+colo molokai
 " }}}
 " {{{ Wild Menu
 set wildmenu
@@ -60,7 +60,7 @@ set et
 " }}}
 augroup myfiletypes
 	autocmd!
-	autocmd FileType php 	set sw=4 sts=4 et 
+	autocmd FileType php 	set sw=4 sts=4 et
 	autocmd FileType c,cpp,h,hpp 	set sw=4 sts=4 et
 	autocmd FileType py 	set sw=4 sts=4 et
 augroup END
@@ -87,7 +87,10 @@ if &term=="screen"
 	set ttymouse=xterm2
 endif
 set relativenumber
+set undodir=~/vimundo
 set undofile
+set backupdir=~/vimbak
+set directory=~/vimbak
 set ruler
 set backspace=2
 let mapleader=" "
@@ -399,10 +402,10 @@ set listchars=tab:│\ ,trail:▫,eol:ⱶ
 nmap tp :tabprev<CR>
 nmap tn :tabnext<CR>
 nmap to :tabnew<CR>
-nmap tc :tabclose<CR> 
+nmap tc :tabclose<CR>
 " }}}
-nnoremap y y+
-nnoremap p +gP
+"nnoremap y y+
+"nnoremap p +gP
 nnoremap <silent> <F8> :TlistToggle<CR>
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 map <F2> :NERDTreeToggle<CR>
