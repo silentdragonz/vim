@@ -1,36 +1,3 @@
-[submodule "bundle/fugitive"]
-        path = bundle/fugitive
-        url = git://github.com/tpope/vim-fugitive.git
-[submodule "bundle/nerdcommenter"]
-	path = bundle/nerdcommenter
-	url = http://github.com/scrooloose/nerdcommenter.git
-[submodule "bundle/fuzzyfinder"]
-	path = bundle/fuzzyfinder
-	url = https://github.com/vim-scripts/FuzzyFinder.git
-[submodule "bundle/gundo"]
-	path = bundle/gundo
-	url = http://github.com/sjl/gundo.vim.git
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
-[submodule "bundle/current-func-info"]
-	path = bundle/current-func-info
-	url = https://github.com/tyru/current-func-info.vim
-[submodule "bundle/php53syntax"]
-	path = bundle/php53syntax
-	url = https://github.com/vim-scripts/php.vim--Garvin.git
-[submodule "bundle/phpcomplete"]
-	path = bundle/phpcomplete
-	url = https://github.com/shawncplus/phpcomplete.vim.git
-[submodule "bundle/supertab"]
-	path = bundle/supertab
-	url = https://github.com/ervandew/supertab.git
-[submodule "bundle/phpfolding"]
-	path = bundle/phpfolding
-	url = https://github.com/vim-scripts/phpfolding.vim.git
-[submodule "bundle/l9"]
-	path = bundle/l9
-	url = https://github.com/vim-scripts/L9.git
-[submodule "bundle/vim-css-color"]
-	path = bundle/vim-css-color
-	url = https://github.com/skammer/vim-css-color.git
+[submodule "bundle/vundle"]
+	path = bundle/vundle
+	url = https://github.com/gmarik/vundle.git
